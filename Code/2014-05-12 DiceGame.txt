@@ -1,0 +1,38 @@
+class DiceGame {
+ int userGuess;
+ String name;
+ _private__ int age;
+ DiceGame() { };
+ DiceGame(__String n____, int _a___) {
+  ____this.name_ = n;
+  ___this.age_____ = a;
+ }
+ __public int__ getAge() {
+  __return___ ___this.age__;
+ }
+ private __int____ RollDice() {
+  return ( (int)(Math.random() * 6) + 1 );
+ }
+ private __int___ getUserInput(__String message___) {
+  System.out.print(message);
+  Scanner s = new Scanner(System.in);
+  return ___s.nextInt();___
+ }
+ private __void__ checkUserGuess(__int _diceFace ____) {
+   if( diceFace == userGuess ) System.out.println("맞았습니다");
+   else
+     System.out.println("틀렸습니다. 컴퓨터는 " + __diceFace____ + "를 가지고 있습니다");  
+ }
+ public ___void__ startPlaying() {
+  System.out.println(__this.name___ + "님 안녕하세요?");
+  userGuess = getUserInput("예상값 입력 : ");
+  __int___ num = RollDice();
+  checkUserGuess(num);
+ }
+}
+public class DiceGameTest {
+       public static void main(String[] args) {
+  DiceGame game = new DiceGame("홍길동", 20);
+  game.startPlaying(); 
+       }
+}

@@ -1,0 +1,129 @@
+<< Mart, MartTest class 작성 >>
+
+class Mart {
+	//필드
+	String item=""; //품목
+	int price; //
+	int change; //거스름돈
+	int pay; //지불액 == 내가 낸돈
+	int milk=500, bread=200, etc=100;
+
+  	public Mart() { }; //defalt 생성자
+  	public Mart(String i, int p) { //품목, 지불액을 전달하는 생성자
+		this.item = i;
+		this.pay = p
+	};
+
+  	//메소드 pricetag() 품목과 가격결정, milk=500, bread=200, etc=100
+	void pricetag() {
+		if( this.item.equals("milk") ) this.price = milk;
+		else if( this.item.equals("bread") ) this.price = bread;
+		else this.price = etc;
+	}
+
+	//메소드 getChange() pay와 price를 비교해서 살수있으면 거스름돈을 리턴 
+      	//(거스름돈이 0이면 10원리턴), (금액이 부족하여 살수 없으면 0리턴)
+	int getChange() {
+		if( this.pay > this.price ) return (this.pay-this.price);
+		else if( this.pay == this.price ) return 10;
+		else return 0;
+	}
+}
+
+class MartTest {
+ public static void Main(String args[]) {
+
+	Mart m1 = new Mart();
+	Mart m2 = new Mart("bread", 1000);
+
+	m1.pricetag();
+	int rstm1 = m1.getChange();
+	System.out.println("rstm1 = " + rstm1); //0
+
+	m2.pricetag();
+	int rstm2 = m2.getChange();
+	System.out.println("rstm2 = " + rstm2); //800
+  }
+}
+
+<< Radio, RadioTest class 작성 >>
+
+class Radio {
+ 	//필드
+	private int volum;	//1.소리크기 volum
+    	private int channel;	//2.채널 channel
+    	private String mode;	//3.주파수모드 mode (FM, AM)
+
+  	//생성자 1.defalt 생성자일때는 주파수모드를 FM으로 설정
+	public Radio() { this.mode = "FM"; }
+
+   	//2.주파수모드를 전달하는 생성자
+	public Radio(String m) { this.mode = m; }
+
+	3.주파수모드, 채널을 전달하는 생성자
+	public Radio(String m, int c) { this.mode = m; this.channel = c; }
+
+	//    1. changeMode() 이 메소드를 부를 때마다 현재 모드를 변경 FM->AM, AM->FM
+	void changeMode() { 
+		if( this.mode.equals("FM") ) this.mode="AM";
+		else this.mode="FM";
+	}
+
+	//2. up() 매개변수가 sound이면 소리를 1증가, other이면 채널을 1증가, 현재 세팅된 값을 리턴
+	int up(String m) {
+		if( m.equals("sound") ) { 
+			this.volum++; 
+			return this.volum; 
+		} else {
+			this.channel++;
+			return this.channel;
+		}
+	}
+
+	//3. down() 매개변수가 sound이면 소리를 1감소, other이면 채널을 1감소, 현재 세팅된 값을 리턴
+	int down(String m) {
+		if( m.equals("sound") ) { 
+			this.volum--; 
+			return this.volum; 
+		} else {
+			this.channel--;
+			return this.channel;
+		}
+	}
+
+	//4. 모든 필드의 getter/setter 메소드
+	int getVolum() { return this.volumn; } 
+	int getChannel() { return this.channel; }
+	String getMode() { return this.mode; }
+
+
+	void setVolum(int v) { this.volumn = v; } 
+	void setChannel(int c) { this.channel =c; }
+	void setMode(String m) { this.mode =m; }
+}
+
+class RadioTest {
+ public static void main(String args[]) {
+
+	Radio r1 = new Radio();
+	Radio r2 = new Radio("FM");
+	Radio r3 = new Radio("AM", 100);
+
+	r1.changeMode();
+	//각 객체가 Radio에서 선언된 모든 메소드들을 호출하고 결과를 출력해 봅니다.
+	//여기 이 다음 부분을 완성해 보시오,
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

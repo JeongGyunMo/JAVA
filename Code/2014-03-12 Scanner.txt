@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Hello {
+  public static void main(String args[]) {
+    int ina, inb;
+
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("input int value : ");
+    ina = input.nextInt();
+
+    System.out.print("value = " + ina);
+  }
+}
+     

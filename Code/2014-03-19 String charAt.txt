@@ -1,0 +1,52 @@
+<퀴즈01>사용자로부터 문자열을 입력받아 세번째 문자를 출력하시오. 정수한개와 실수한개를 입력 받아 입력받은 정수를 1증가하여 입력받은실수와 더하여 res변수에 저장하고 출력하시오.
+
+import java.util.Scanner;
+public class Test {
+  public static void main(String args[]) {
+
+	Scanner scan = new Scanner(System.in);
+
+	System.out.print("문자열 입력 :");
+	String str = scan.next(); //nextLine()
+	char ch = str.charAt(2);
+	//char ch = scan.next().charAt(2);
+	System.out.print("세번째 문자 = " + ch);
+
+	System.out.print("정수 입력 :");
+	int in = scan.nextInt(); 
+
+	System.out.print("실수 입력 :");
+	double doo = scan.nextDouble(); 
+
+	double res = ++in + doo;
+	System.out.print("res = " + res);
+ }
+}
+
+<<두 정수 같으면 OK 다르면 NOK 출력>>
+
+import java.util.Scanner;
+public class Test {
+  public static void main(String args[]) {
+
+	Scanner scan = new Scanner(System.in);
+
+	System.out.print("정수 입력 :");
+	int ina = scan.nextInt(); 
+
+	System.out.print("정수 입력 :");
+	int inb = scan.nextInt(); 
+
+	if(ina == inb) System.out.print("OK");
+	else System.out.print("NOK");
+
+	if(ina != inb) System.out.print("NOK");
+	else System.out.print("OK");
+ }
+}
+
+
+
+
+
+	

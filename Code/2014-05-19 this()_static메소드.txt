@@ -1,0 +1,200 @@
+//
+//this()의 예
+//
+public class ConThis {	
+	ConThis() {
+		this(6);
+		System.out.println("=== 0 ===");
+	};
+	ConThis(int in) {
+		System.out.println("=== 1 ===" + "in= " + in);
+	}
+	
+	ConThis(int in, int out) {
+		this();
+		System.out.println("=== 2 ===" + "in= " + in + ", out= " + out);
+	}
+}
+
+public class ConThisTest {
+	public static void main(String[] args) {		
+		ConThis a = new ConThis(9, 7); //1, 0, 2
+	}
+
+}
+
+======
+public class Student {
+	private String name;
+	private int age;
+	
+	Student() { 
+		this("anonymous", 0); 
+	}
+	Student(String sn, int sa) {
+		this.name = sn;
+		this.age = sa;
+		
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String sn) {
+		this.name = sn;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int sa) {
+		this.age = sa;
+	}
+}
+public class OurClass {
+	String teacher;
+	Student std;
+	static int count;
+	
+	OurClass() {
+		this("none", "none", 0);
+	}
+	OurClass(String t, String sn, int sa) {
+		this.teacher = t;
+		std = new Student(sn, sa);
+		count++;
+	}
+	public String toString() {
+		String str="";
+		str += "OurClass [teacher=" + teacher;
+		str += ", std.name=" + std.getName();
+		str += ", std.age=" + std.getAge() + "]";
+
+		return str;
+	}
+}
+public class OurClassTest {
+	public static void main(String[] args) {
+		OurClass oca = new OurClass("양은샘", "홍길동", 20);
+		System.out.println(oca);
+		System.out.println("static int count=" + OurClass.count); //not oca.count
+
+		OurClass oc = new OurClass();
+		System.out.println(ocb);
+		System.out.println("static int count=" + OurClass.count);
+
+	}
+}
+===============================
+
+//
+// static() 메소드 작성 연습 - 객체. 을 사용하지 않은 메소드
+//
+
+import java.util.*;
+public class Test {
+  public static void main(String[] args) 
+  {
+    String str = input_str();
+    char ch = input_char();	
+    int num = find(str, ch);
+
+    System.out.println("입력 문자열 " + str);
+    System.out.println("입력 문자 " + ch);
+  }
+  public static String input_str() {
+    Scanner s = new Scanner(System.in);
+    System.out.print("문자열 입력 : ");
+    String in = s.nextLine();
+    return in;
+  }
+  public static char input_char() {
+    Scanner s = new Scanner(System.in);
+    System.out.print("문자 입력 : ");
+    char in = s.next().charAt(0);
+    return in;
+  }
+}
+
+A. 메소드 작성
+
+    main() ---> 정수 ----> f1()
+    main() <--- return 정수*5 <---- f1()
+
+    선언 : 
+	*** ###($$$); 
+	int f1(int a);
+
+
+    호출 :
+	*** ###($$$);
+	int rst = f1(5);
+
+
+class Test {
+	public static void main(String args[]) {
+		int rst = f1(5);
+	}
+	int f1(int a)
+	{
+		return a*5;
+	}
+}
+
+
+B. 메소드 작성
+
+    main() ---> 정수, 정수 ----> f2()
+    main() <--- return 정수*정수 <---- f2()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+C. 메소드 작성
+
+    main() ---> 문자 ----> f3() : 문자출력
+    main() <---  No return <---- f3()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+D. 메소드 작성
+
+    main() ---> No ----> f4() : 문자입력
+    main() <--- return 입력받은 문자 <---- f4()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+E. 메소드 작성
+
+    main() ---> 소문자 문자열 ----> f5() : 
+    main() <--- return 대문자 문자열 <---- f5()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+F. 메소드 작성
+
+    main() ---> No ----> f6() : 학생객체 생성
+    main() <--- return 학생객체 <---- f6()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);

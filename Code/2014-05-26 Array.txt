@@ -1,0 +1,140 @@
+1. 13주차 실습 풀이
+2. 12주차 실습 풀이
+3. 12주차 퀴즈 풀이
+4. 객체배열 배우기
+
+>> 12주차 퀴즈 퀴즈
+
+>> Museum, MuseumTest 클래스 필요
+박물관(Museum)에 입장한 사람들의 총수(totalcount), 어린이의 수(childcount)를 세려고 합니다. 
+사람들이 박물관에 입장할 때 나이(age)를 이야기 했다면 
+그 나이가 12살 이하는 어린이로 봅니다. 
+나이를 이야기 하지 않았다면 성인입니다. 
+모든 변수는 private입니다.
+
+>>SearchTest 필요
+5명의 이름을 입력 받아 name 배열에 저장합니다.
+저장 한 후
+찾고자 하는 사람(find)의 이름을 입력 받아 
+그 사람이 name 배열에 존재하면 OK를 출력하시오.
+
+>>12주차 실습 자료
+
+//
+// static() 메소드 작성 연습 - 객체. 을 사용하지 않은 메소드
+//
+
+import java.util.*;
+public class Test {
+  public static void main(String[] args) 
+  {
+    String str = input_str();
+    char ch = input_char();	
+    int num = find(str, ch);
+
+    System.out.println("입력 문자열 " + str);
+    System.out.println("입력 문자 " + ch);
+  }
+  public static String input_str() {
+    Scanner s = new Scanner(System.in);
+    System.out.print("문자열 입력 : ");
+    String in = s.nextLine();
+    return in;
+  }
+  public static char input_char() {
+    Scanner s = new Scanner(System.in);
+    System.out.print("문자 입력 : ");
+    char in = s.next().charAt(0);
+    return in;
+  }
+}
+
+A. 메소드 작성
+
+    main() ---> 정수 ----> f1()
+    main() <--- return 정수*5 <---- f1()
+
+    선언 : 
+	*** ###($$$); 
+	int f1(int a);
+
+
+    호출 :
+	*** ###($$$);
+	int rst = f1(5);
+
+
+class Test {
+	public static void main(String args[]) {
+		int rst = f1(5);
+	}
+	int f1(int a)
+	{
+		return a*5;
+	}
+}
+
+
+B. 메소드 작성
+
+    main() ---> 정수, 정수 ----> f2()
+    main() <--- return 정수*정수 <---- f2()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+C. 메소드 작성
+
+    main() ---> 문자 ----> f3() : 문자출력
+    main() <---  No return <---- f3()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+D. 메소드 작성
+
+    main() ---> No ----> f4() : 문자입력
+    main() <--- return 입력받은 문자 <---- f4()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+E. 메소드 작성
+
+    main() ---> 소문자 문자열 ----> f5() : 
+    main() <--- return 대문자 문자열 <---- f5()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+F. 메소드 작성
+
+    main() ---> No ----> f6() : 학생객체 생성
+    main() <--- return 학생객체 <---- f6()
+
+    선언 : 
+	*** ###($$$);
+
+    호출 :
+	*** ###($$$);
+
+
+
+
+
